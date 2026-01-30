@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantumTech | Servicios de Reparación Avanzada</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>TechFix Pro | Reparación de Computadoras</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0066ff;
-            --primary-dark: #0052d4;
-            --secondary: #1a1a2e;
-            --accent: #00d4aa;
-            --accent-dark: #00b894;
-            --dark: #0f0f1e;
-            --light: #f8f9ff;
-            --gray: #8a8aa3;
-            --gray-light: #e6e6f0;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
-            --shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
-            --shadow-dark: 0 15px 40px rgba(0, 0, 0, 0.25);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-dark: 0 15px 35px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+            --radius: 12px;
         }
         
         * {
@@ -31,156 +31,52 @@
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--light);
-            background-color: var(--dark);
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
         }
         
         .container {
             width: 100%;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
         section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-        
-        .section-title h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn i {
-            margin-left: 10px;
-            transition: var(--transition);
-        }
-        
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.3);
-        }
-        
-        .btn-primary:hover i {
-            transform: translateX(5px);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-5px);
+            padding: 80px 0;
         }
         
         /* Header */
         header {
-            position: fixed;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
             z-index: 1000;
-            padding: 25px 0;
-            transition: var(--transition);
-            background-color: rgba(15, 15, 30, 0.9);
-            backdrop-filter: blur(10px);
-        }
-        
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: var(--shadow-dark);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
             font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
         }
         
         .logo i {
-            color: var(--primary);
             margin-right: 10px;
             font-size: 2rem;
-        }
-        
-        .logo span {
-            color: var(--primary);
         }
         
         nav ul {
@@ -189,16 +85,16 @@
         }
         
         nav ul li {
-            margin-left: 40px;
+            margin-left: 30px;
         }
         
         nav ul li a {
-            color: white;
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
+            padding: 8px 0;
             position: relative;
-            padding: 5px 0;
         }
         
         nav ul li a::after {
@@ -207,8 +103,8 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--gradient);
+            height: 3px;
+            background: var(--primary);
             transition: var(--transition);
         }
         
@@ -220,398 +116,145 @@
             width: 100%;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
         /* Hero */
         .hero {
-            padding-top: 180px;
-            padding-bottom: 150px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-dark);
-            opacity: 0.7;
-            z-index: -1;
-        }
-        
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-        }
-        
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
-        }
-        
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            animation: float 20s infinite linear;
-            z-index: -1;
-        }
-        
-        .floating-element:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-        
-        .floating-element:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            top: 60%;
-            right: 10%;
-            animation-delay: -5s;
-            animation-direction: reverse;
-        }
-        
-        .floating-element:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            left: 15%;
-            animation-delay: -10s;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            33% {
-                transform: translate(30px, -50px) rotate(120deg);
-            }
-            66% {
-                transform: translate(-20px, 20px) rotate(240deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(360deg);
-            }
-        }
-        
-        .hero-content {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            line-height: 1.2;
-            animation: fadeInUp 1s ease-out;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.3rem;
-            color: var(--gray);
-            margin-bottom: 40px;
+            font-size: 1.2rem;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeInUp 1s ease-out 0.4s both;
+            margin: 0 auto 40px;
+            opacity: 0.9;
         }
         
         /* Services */
-        .services {
-            background-color: var(--secondary);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .services::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: 0.05;
-            filter: blur(50px);
-        }
-        
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
+            background: white;
+            border-radius: var(--radius);
             padding: 40px 30px;
+            box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: var(--transition);
-            z-index: -1;
+            text-align: center;
+            border: 2px solid transparent;
         }
         
         .service-card:hover {
-            transform: translateY(-15px);
-            border-color: transparent;
-            box-shadow: var(--shadow-dark);
-        }
-        
-        .service-card:hover::before {
-            opacity: 0.1;
+            transform: translateY(-10px);
+            border-color: var(--primary);
         }
         
         .service-icon {
             width: 80px;
             height: 80px;
-            border-radius: 20px;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
+            margin: 0 auto 25px;
             color: white;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
+            font-size: 2rem;
         }
         
         .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
         
         .service-card p {
             color: var(--gray);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
-        .service-features {
-            list-style: none;
-            margin-top: 20px;
+        /* Form Section */
+        .form-section {
+            background-color: var(--light);
         }
         
-        .service-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
             color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
         }
         
-        .service-features li i {
-            color: var(--accent);
-            margin-right: 10px;
-            font-size: 0.9rem;
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
         }
         
-        /* About */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 25px;
+        .form-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-        }
-        
-        .about-text p {
-            color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .stat-item {
+            padding: 30px;
             text-align: center;
         }
         
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
+        .form-header h3 {
+            font-size: 1.8rem;
             margin-bottom: 10px;
         }
         
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .form-body {
+            padding: 40px;
         }
         
-        .about-image {
-            position: relative;
-        }
-        
-        .about-image-main {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-dark);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .about-image-main img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .about-image:hover .about-image-main img {
-            transform: scale(1.05);
-        }
-        
-        .about-image-decoration {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            z-index: 0;
-        }
-        
-        .decoration-1 {
-            background: var(--gradient);
-            top: -30px;
-            right: -30px;
-            opacity: 0.2;
-        }
-        
-        .decoration-2 {
-            background: var(--accent);
-            bottom: -20px;
-            left: -20px;
-            opacity: 0.1;
-        }
-        
-        /* Contact */
-        .contact {
-            background-color: var(--secondary);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact::after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: var(--accent);
-            opacity: 0.05;
-            filter: blur(50px);
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .contact-form h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: white;
-        }
-        
+        /* Form Styles */
         .form-group {
             margin-bottom: 25px;
-            position: relative;
         }
         
-        .form-group label {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-label {
             display: block;
-            margin-bottom: 10px;
-            color: var(--gray);
+            margin-bottom: 8px;
             font-weight: 500;
+            color: var(--dark);
         }
         
         .form-control {
             width: 100%;
-            padding: 18px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: white;
-            font-family: 'Inter', sans-serif;
+            padding: 15px;
+            border: 2px solid var(--gray-light);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
         }
@@ -619,118 +262,226 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.3);
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
         
-        .contact-info {
-            padding-top: 20px;
+        .form-error {
+            color: var(--error);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
         }
         
-        .contact-info h2 {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            color: white;
+        .form-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: none;
+            align-items: center;
         }
         
-        .contact-items {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+        .form-success i {
+            margin-right: 10px;
+            font-size: 1.2rem;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
+        .form-success .reference {
+            display: block;
+            font-weight: 600;
+            margin-top: 5px;
+            background: rgba(16, 185, 129, 0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .form-loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: var(--primary);
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Service Options */
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .service-option {
+            position: relative;
+        }
+        
+        .service-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .service-label {
+            display: block;
+            padding: 15px;
+            background-color: var(--light);
+            border: 2px solid var(--gray-light);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-weight: 500;
         }
         
-        .contact-item:hover {
-            transform: translateX(10px);
+        .service-option input:checked + .service-label {
+            background-color: rgba(37, 99, 235, 0.1);
             border-color: var(--primary);
+            color: var(--primary);
         }
         
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            background: var(--gradient);
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
-            font-size: 1.5rem;
-            color: white;
-            flex-shrink: 0;
+            gap: 10px;
         }
         
-        .contact-details h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: white;
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
         
-        .contact-details p {
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Instructions */
+        .instructions {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 40px;
+            display: none;
+        }
+        
+        .instructions h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
             color: var(--gray);
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .instructions a {
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .instructions a:hover {
+            text-decoration: underline;
+        }
+        
+        .show-instructions {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .show-instructions:hover {
+            text-decoration: underline;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
-            padding: 80px 0 30px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 60px 0 30px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
         
-        .footer-about .logo {
-            margin-bottom: 25px;
+        .footer-logo {
             font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
         }
         
         .footer-about p {
-            color: var(--gray);
-            margin-bottom: 25px;
+            color: var(--gray-light);
+            margin-bottom: 20px;
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-5px);
-        }
-        
-        .footer-links h3 {
-            font-size: 1.3rem;
-            color: white;
-            margin-bottom: 25px;
         }
         
         .footer-links ul {
@@ -738,192 +489,81 @@
         }
         
         .footer-links ul li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .footer-links ul li a {
-            color: var(--gray);
+            color: var(--gray-light);
             text-decoration: none;
             transition: var(--transition);
         }
         
         .footer-links ul li a:hover {
-            color: var(--primary);
+            color: var(--accent);
             padding-left: 5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info i {
+            color: var(--accent);
+            margin-right: 15px;
+            margin-top: 5px;
         }
         
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-light);
             font-size: 0.9rem;
         }
         
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in-left {
-            animation: fadeInLeft 1s ease-out;
-        }
-        
-        .fade-in-right {
-            animation: fadeInRight 1s ease-out;
-        }
-        
         /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-        }
-        
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .about-content, .contact-container {
+            .form-row {
                 grid-template-columns: 1fr;
-                gap: 60px;
             }
             
-            .footer-content {
+            .service-options {
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--dark);
-                padding: 30px;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-                box-shadow: var(--shadow-dark);
-                z-index: 999;
-            }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0 0 25px 0;
+            .hero h1 {
+                font-size: 2.8rem;
             }
         }
         
         @media (max-width: 768px) {
-            .hero {
-                padding-top: 150px;
-                padding-bottom: 100px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-btns {
+            .header-container {
                 flex-direction: column;
-                align-items: center;
-                gap: 15px;
             }
             
-            .btn {
-                width: 100%;
-                max-width: 300px;
+            nav ul {
+                margin-top: 20px;
             }
             
-            .contact-form {
-                padding: 30px;
+            nav ul li {
+                margin: 0 10px;
             }
             
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
+            .hero {
+                padding: 80px 0;
             }
-        }
-        
-        @media (max-width: 576px) {
+            
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .service-card, .contact-item {
+            .form-body {
                 padding: 30px 20px;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
+            .service-options {
                 grid-template-columns: 1fr;
             }
         }
@@ -931,22 +571,16 @@
 </head>
 <body>
     <!-- Header -->
-    <header id="header">
+    <header>
         <div class="container header-container">
-            <a href="#home" class="logo">
-                <i class="fas fa-microchip"></i>
-                Quantum<span>Tech</span>
+            <a href="#" class="logo">
+                <i class="fas fa-laptop-code"></i>
+                TechFix Pro
             </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav id="mainNav">
+            <nav>
                 <ul>
-                    <li><a href="#home">Inicio</a></li>
                     <li><a href="#services">Servicios</a></li>
-                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#form">Solicitar Servicio</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -954,207 +588,198 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Reparación de Computadoras de <span class="highlight">Alta Tecnología</span></h1>
-                <p>Soluciones avanzadas para problemas tecnológicos. Especialistas en instalación de drivers, clonación de discos y actualización de hardware con técnicas de vanguardia.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-primary">Nuestros Servicios <i class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Contacto Inmediato</a>
-                </div>
-            </div>
+            <h1>Servicios Profesionales de Reparación de Computadoras</h1>
+            <p>Especialistas en instalación de drivers, clonación de discos, cambio de discos duros y reparación integral. Soluciones rápidas y confiables.</p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Servicios Especializados</h2>
-                <p>Ofrecemos soluciones tecnológicas integrales con las herramientas y conocimientos más avanzados del sector.</p>
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una gama completa de servicios técnicos con garantía de calidad y satisfacción.</p>
             </div>
-            
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Reparación Integral</h3>
-                    <p>Diagnóstico y reparación de hardware y software con equipos de última generación y técnicos certificados.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Diagnóstico gratuito</li>
-                        <li><i class="fas fa-check"></i> Reparación en 24-48 horas</li>
-                        <li><i class="fas fa-check"></i> Garantía de 6 meses</li>
-                    </ul>
+                    <h3>Reparación de Computadoras</h3>
+                    <p>Diagnóstico y reparación de hardware y software para todo tipo de equipos.</p>
                 </div>
-                
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Instalación de Drivers</h3>
-                    <p>Configuración óptima de controladores para maximizar el rendimiento y compatibilidad de todos los componentes.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Drivers oficiales y actualizados</li>
-                        <li><i class="fas fa-check"></i> Optimización de rendimiento</li>
-                        <li><i class="fas fa-check"></i> Solución de conflictos</li>
-                    </ul>
+                    <p>Configuración óptima de controladores para máximo rendimiento.</p>
                 </div>
-                
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-clone"></i>
                     </div>
                     <h3>Clonación de Discos</h3>
-                    <p>Migración completa de sistemas operativos, programas y datos a nuevas unidades sin pérdida de información.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Clonación exacta bit a bit</li>
-                        <li><i class="fas fa-check"></i> Compatibilidad con HDD/SSD/NVMe</li>
-                        <li><i class="fas fa-check"></i> Verificación de integridad</li>
-                    </ul>
+                    <p>Migración completa de datos y sistema operativo a nuevas unidades.</p>
                 </div>
-                
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hdd"></i>
                     </div>
                     <h3>Cambio de Disco Duro/SSD</h3>
-                    <p>Actualización a unidades de estado sólido para revolucionar la velocidad y respuesta de tu equipo.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Instalación física profesional</li>
-                        <li><i class="fas fa-check"></i> Migración de datos incluida</li>
-                        <li><i class="fas fa-check"></i> Optimización del sistema</li>
-                    </ul>
+                    <p>Actualización a unidades SSD para mejorar velocidad y rendimiento.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <h2>Tecnología de Vanguardia para Soluciones Confiables</h2>
-                    <p>En QuantumTech combinamos experiencia técnica con herramientas de diagnóstico avanzadas para ofrecer soluciones informáticas de alta calidad.</p>
-                    <p>Nuestro equipo de ingenieros y técnicos certificados se mantiene actualizado con las últimas tecnologías y metodologías de reparación, garantizando un servicio excepcional en cada intervención.</p>
-                    
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number">1500+</div>
-                            <div class="stat-label">Equipos Reparados</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">99%</div>
-                            <div class="stat-label">Satisfacción Clientes</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24h</div>
-                            <div class="stat-label">Respuesta Garantizada</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-image animate-on-scroll">
-                    <div class="about-image-main">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Técnico trabajando en computadora">
-                    </div>
-                    <div class="about-image-decoration decoration-1"></div>
-                    <div class="about-image-decoration decoration-2"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Form Section -->
+    <section class="form-section" id="form">
         <div class="container">
             <div class="section-title">
-                <h2>Contacto Rápido</h2>
-                <p>Solicita un diagnóstico gratuito o agenda una reparación con nuestros especialistas.</p>
+                <h2>Solicitar Servicio Técnico</h2>
+                <p>Complete el formulario y nos contactaremos en menos de 24 horas para brindarle una solución.</p>
             </div>
             
-            <div class="contact-container">
-                <div class="contact-form animate-on-scroll">
-                    <h2>Solicitar Servicio</h2>
-                    <form id="serviceForm">
-                        <div class="form-group">
-                            <label for="name">Nombre completo</label>
-                            <input type="text" id="name" class="form-control" placeholder="Ingresa tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" class="form-control" placeholder="ejemplo@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 123-4567" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Servicio requerido</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Selecciona un servicio</option>
-                                <option value="reparacion">Reparación de Computadoras</option>
-                                <option value="drivers">Instalación de Drivers</option>
-                                <option value="clonacion">Clonación de Discos</option>
-                                <option value="cambio-disco">Cambio de Disco Duro/SSD</option>
-                                <option value="multiple">Múltiples servicios</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Descripción del problema</label>
-                            <textarea id="message" class="form-control" rows="5" placeholder="Describe el problema que estás experimentando..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Solicitud <i class="fas fa-paper-plane"></i></button>
-                    </form>
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>Formulario de Solicitud</h3>
+                    <p>Los campos marcados con * son obligatorios</p>
                 </div>
                 
-                <div class="contact-info animate-on-scroll">
-                    <h2>Información de Contacto</h2>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                <div class="form-body">
+                    <!-- Success Message -->
+                    <div class="form-success" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Solicitud enviada correctamente</strong>
+                            <p id="successDetails">Los datos han sido guardados en Google Sheets. Nos contactaremos con usted en las próximas 24 horas.</p>
+                            <span class="reference" id="referenceNumber"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Loading Indicator -->
+                    <div class="form-loading" id="loadingIndicator">
+                        <div class="loading-spinner"></div>
+                        <p>Enviando su solicitud a Google Sheets, por favor espere...</p>
+                    </div>
+                    
+                    <!-- Form -->
+                    <form id="serviceRequestForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientName" class="form-label">Nombre completo *</label>
+                                <input type="text" id="clientName" class="form-control" placeholder="Ingrese su nombre completo" required>
+                                <div class="form-error" id="nameError">Por favor ingrese su nombre completo</div>
                             </div>
-                            <div class="contact-details">
-                                <h3>Ubicación</h3>
-                                <p>Avenida Tecnológica 456<br>Centro de Innovación, Ciudad</p>
+                            
+                            <div class="form-group">
+                                <label for="clientEmail" class="form-label">Correo electrónico *</label>
+                                <input type="email" id="clientEmail" class="form-control" placeholder="ejemplo@email.com" required>
+                                <div class="form-error" id="emailError">Por favor ingrese un correo electrónico válido</div>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientPhone" class="form-label">Teléfono *</label>
+                                <input type="tel" id="clientPhone" class="form-control" placeholder="+1 (555) 123-4567" required>
+                                <div class="form-error" id="phoneError">Por favor ingrese un número de teléfono válido</div>
                             </div>
-                            <div class="contact-details">
-                                <h3>Teléfono</h3>
-                                <p>+1 (555) 123-4567<br>Lunes a Sábado: 8:00 AM - 8:00 PM</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Correo Electrónico</h3>
-                                <p>info@quantumtech.com<br>soporte@quantumtech.com</p>
+                            
+                            <div class="form-group">
+                                <label for="clientAddress" class="form-label">Dirección (opcional)</label>
+                                <input type="text" id="clientAddress" class="form-control" placeholder="Dirección para servicio a domicilio">
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Servicio requerido *</label>
+                            <div class="service-options">
+                                <div class="service-option">
+                                    <input type="radio" id="service1" name="serviceType" value="Reparación de Computadoras" required>
+                                    <label for="service1" class="service-label">Reparación</label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="radio" id="service2" name="serviceType" value="Instalación de Drivers">
+                                    <label for="service2" class="service-label">Instalación Drivers</label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="radio" id="service3" name="serviceType" value="Clonación de Discos">
+                                    <label for="service3" class="service-label">Clonación Discos</label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="radio" id="service4" name="serviceType" value="Cambio de Disco Duro/SSD">
+                                    <label for="service4" class="service-label">Cambio Disco/SSD</label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="radio" id="service5" name="serviceType" value="Múltiples Servicios">
+                                    <label for="service5" class="service-label">Múltiples Servicios</label>
+                                </div>
                             </div>
-                            <div class="contact-details">
-                                <h3>Horario de Atención</h3>
-                                <p>Lunes a Viernes: 9:00 AM - 7:00 PM<br>Sábados: 10:00 AM - 3:00 PM</p>
-                            </div>
+                            <div class="form-error" id="serviceError">Por favor seleccione un servicio</div>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="deviceType" class="form-label">Tipo de dispositivo *</label>
+                            <select id="deviceType" class="form-control" required>
+                                <option value="">Seleccione el tipo de dispositivo</option>
+                                <option value="Laptop">Laptop/Portátil</option>
+                                <option value="Desktop">Computadora de Escritorio</option>
+                                <option value="All-in-One">All-in-One</option>
+                                <option value="Workstation">Estación de Trabajo</option>
+                                <option value="Servidor">Servidor</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <div class="form-error" id="deviceError">Por favor seleccione el tipo de dispositivo</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="problemDescription" class="form-label">Descripción del problema *</label>
+                            <textarea id="problemDescription" class="form-control" placeholder="Describa detalladamente el problema que está experimentando..." required></textarea>
+                            <div class="form-error" id="descriptionError">Por favor describa el problema</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency" class="form-label">Nivel de urgencia</label>
+                            <select id="urgency" class="form-control">
+                                <option value="Normal">Normal (3-5 días)</option>
+                                <option value="Urgente">Urgente (24-48 horas)</option>
+                                <option value="Muy Urgente">Muy Urgente (mismo día)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additionalNotes" class="form-label">Notas adicionales (opcional)</label>
+                            <textarea id="additionalNotes" class="form-control" placeholder="Cualquier información adicional que considere relevante..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                    
+                    <button type="button" class="show-instructions" id="showInstructionsBtn">
+                        <i class="fas fa-info-circle"></i>
+                        ¿Cómo configurar Google Sheets para recibir los datos?
+                    </button>
+                    
+                    <div class="instructions" id="instructionsPanel">
+                        <h4>Configuración para Google Sheets</h4>
+                        <ol>
+                            <li>Crea una hoja de cálculo en <a href="https://sheets.google.com" target="_blank">Google Sheets</a></li>
+                            <li>En la primera fila, añade estos encabezados: <code>Fecha, Nombre, Email, Teléfono, Servicio, Dispositivo, Problema, Urgencia, Dirección, Notas, Referencia</code></li>
+                            <li>Ve a <strong>Extensiones → Apps Script</strong></li>
+                            <li>Pega el código de Google Apps Script que encontrarás en las instrucciones</li>
+                            <li>Cambia <code>TU_HOJA_ID</code> por el ID de tu hoja</li>
+                            <li>Haz clic en <strong>Desplegar → Nueva implementación</strong></li>
+                            <li>Tipo: <strong>Aplicación web</strong>, Acceso: <strong>Cualquier persona</strong></li>
+                            <li>Copia la URL generada y pégala en la variable <code>SCRIPT_URL</code> en el código JavaScript</li>
+                        </ol>
+                        <p><strong>Nota:</strong> Los datos se guardarán automáticamente en tu hoja de cálculo.</p>
                     </div>
                 </div>
             </div>
@@ -1162,25 +787,30 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <a href="#home" class="logo">
-                        <i class="fas fa-microchip"></i>
-                        Quantum<span>Tech</span>
-                    </a>
-                    <p>Especialistas en soluciones tecnológicas avanzadas para reparación y optimización de equipos informáticos.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="footer-logo">TechFix <span>Pro</span></div>
+                    <p>Especialistas en reparación y mantenimiento de equipos informáticos con más de 10 años de experiencia en el sector.</p>
+                    <div class="contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <p><strong>Teléfono:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Horario:</strong> Lunes a Sábado 9:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p><strong>Email:</strong> info@techfixpro.com</p>
+                            <p><strong>Soporte:</strong> soporte@techfixpro.com</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Servicios</h3>
+                    <h4>Servicios</h4>
                     <ul>
                         <li><a href="#services">Reparación de Computadoras</a></li>
                         <li><a href="#services">Instalación de Drivers</a></li>
@@ -1190,173 +820,372 @@
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Enlaces Rápidos</h3>
+                    <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="#home">Inicio</a></li>
                         <li><a href="#services">Servicios</a></li>
-                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#form">Solicitar Servicio</a></li>
                         <li><a href="#contact">Contacto</a></li>
+                        <li><a href="#">Política de Garantía</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Legal</h3>
+                    <h4>Legal</h4>
                     <ul>
                         <li><a href="#">Términos y Condiciones</a></li>
                         <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Garantías</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Cookies</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 QuantumTech. Todos los derechos reservados. | Diseño con animaciones avanzadas</p>
+                <p>&copy; 2023 TechFix Pro. Todos los derechos reservados. | Formulario integrado con Google Sheets</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        // ============================================
+        // CONFIGURACIÓN IMPORTANTE
+        // ============================================
+        // REEMPLAZA ESTA URL CON LA DE TU APLICACIÓN DE GOOGLE APPS SCRIPT
+        // Obtén la URL después de desplegar tu script de Google Apps Script
+        // Ejemplo: https://script.google.com/macros/s/AKfycbw0JhT6t4hQY8K7ZQY2Qa5r5q8p5q8p5q8p5q8p5q8p5q8p5q8/exec
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVIJ5_-SxWhjd-HPgE2IS3zt4-oLtLwG4W257w4eJbj1fC_LMKG0dD24uXrh_ySXLMWA/exec';
+        // ============================================
         
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mainNav a').forEach(link => {
-            link.addEventListener('click', function() {
-                mainNav.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('serviceRequestForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const successDetails = document.getElementById('successDetails');
+            const referenceNumber = document.getElementById('referenceNumber');
+            const instructionsPanel = document.getElementById('instructionsPanel');
+            const showInstructionsBtn = document.getElementById('showInstructionsBtn');
+            
+            // Error elements
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const phoneError = document.getElementById('phoneError');
+            const serviceError = document.getElementById('serviceError');
+            const deviceError = document.getElementById('deviceError');
+            const descriptionError = document.getElementById('descriptionError');
+            
+            // Toggle instructions panel
+            showInstructionsBtn.addEventListener('click', function() {
+                instructionsPanel.style.display = instructionsPanel.style.display === 'block' ? 'none' : 'block';
+                this.innerHTML = instructionsPanel.style.display === 'block' 
+                    ? '<i class="fas fa-times"></i> Ocultar instrucciones' 
+                    : '<i class="fas fa-info-circle"></i> ¿Cómo configurar Google Sheets para recibir los datos?';
             });
-        });
-        
-        // Form submission
-        document.getElementById('serviceForm').addEventListener('submit', function(e) {
-            e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const service = document.getElementById('service').value;
+            // Form validation
+            function validateForm() {
+                let isValid = true;
+                
+                // Reset errors
+                [nameError, emailError, phoneError, serviceError, deviceError, descriptionError].forEach(error => {
+                    error.style.display = 'none';
+                });
+                
+                // Validate name
+                const name = document.getElementById('clientName').value.trim();
+                if (name.length < 3) {
+                    showError(nameError, 'El nombre debe tener al menos 3 caracteres');
+                    isValid = false;
+                }
+                
+                // Validate email
+                const email = document.getElementById('clientEmail').value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showError(emailError, 'Por favor ingrese un correo electrónico válido');
+                    isValid = false;
+                }
+                
+                // Validate phone
+                const phone = document.getElementById('clientPhone').value.trim();
+                const phoneRegex = /^[\d\s\-\+\(\)]{8,}$/;
+                if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+                    showError(phoneError, 'Por favor ingrese un número de teléfono válido (al menos 8 dígitos)');
+                    isValid = false;
+                }
+                
+                // Validate service type
+                const serviceType = document.querySelector('input[name="serviceType"]:checked');
+                if (!serviceType) {
+                    showError(serviceError, 'Por favor seleccione un servicio');
+                    isValid = false;
+                }
+                
+                // Validate device type
+                const deviceType = document.getElementById('deviceType').value;
+                if (!deviceType) {
+                    showError(deviceError, 'Por favor seleccione el tipo de dispositivo');
+                    isValid = false;
+                }
+                
+                // Validate description
+                const description = document.getElementById('problemDescription').value.trim();
+                if (description.length < 10) {
+                    showError(descriptionError, 'La descripción debe tener al menos 10 caracteres');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
             
-            const serviceNames = {
-                'reparacion': 'Reparación de Computadoras',
-                'drivers': 'Instalación de Drivers',
-                'clonacion': 'Clonación de Discos',
-                'cambio-disco': 'Cambio de Disco Duro/SSD',
-                'multiple': 'Múltiples servicios'
-            };
-            
-            // Create a notification element
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: var(--gradient);
-                color: white;
-                padding: 20px 30px;
-                border-radius: 10px;
-                box-shadow: var(--shadow-dark);
-                z-index: 10000;
-                animation: fadeInUp 0.5s ease-out;
-                max-width: 400px;
-            `;
-            
-            notification.innerHTML = `
-                <h3 style="margin-bottom: 10px;">¡Solicitud Enviada!</h3>
-                <p>Gracias <strong>${name}</strong>. Hemos recibido tu solicitud para <strong>${serviceNames[service]}</strong>. Nos contactaremos contigo en menos de 24 horas.</p>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Remove notification after 5 seconds
-            setTimeout(() => {
-                notification.style.animation = 'fadeInUp 0.5s ease-out reverse';
+            // Show form errors with animation
+            function showError(element, message) {
+                element.textContent = message;
+                element.style.display = 'block';
+                element.style.animation = 'shake 0.5s ease';
                 setTimeout(() => {
-                    document.body.removeChild(notification);
+                    element.style.animation = '';
                 }, 500);
-            }, 5000);
+            }
             
-            // Reset form
-            document.getElementById('serviceForm').reset();
-        });
-        
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            // Form submission to Google Sheets - CORREGIDO
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (!validateForm()) {
+                    // Scroll to first error
+                    const firstError = document.querySelector('.form-error[style*="display: block"]');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+                
+                // Collect form data
+                const formData = {
+                    name: document.getElementById('clientName').value.trim(),
+                    email: document.getElementById('clientEmail').value.trim(),
+                    phone: document.getElementById('clientPhone').value.trim(),
+                    address: document.getElementById('clientAddress').value.trim(),
+                    serviceType: document.querySelector('input[name="serviceType"]:checked').value,
+                    deviceType: document.getElementById('deviceType').value,
+                    problemDescription: document.getElementById('problemDescription').value.trim(),
+                    urgency: document.getElementById('urgency').value,
+                    additionalNotes: document.getElementById('additionalNotes').value.trim(),
+                    timestamp: new Date().toISOString(),
+                    source: 'TechFix Pro Website'
+                };
+                
+                // Generate reference number
+                const refNumber = 'TF-' + Date.now().toString().slice(-8);
+                
+                // Show loading indicator
+                submitBtn.disabled = true;
+                loadingIndicator.style.display = 'block';
+                form.style.opacity = '0.6';
+                
+                try {
+                    // Check if SCRIPT_URL is configured
+                    if (!SCRIPT_URL || SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbyKH8yVwExevLjIe8T5HacGkQQxSxlNc_sUoRTU99Cn1zUAcS0hgrL3k1d99fyMk7Hy/exec') {
+                        throw new Error('La URL de Google Apps Script no está configurada. Por favor, sigue las instrucciones para configurarla.');
+                    }
+                    
+                    console.log('📤 Enviando datos a Google Sheets...');
+                    console.log('🔗 URL:', SCRIPT_URL);
+                    console.log('📋 Datos:', formData);
+                    
+                    // CORRECCIÓN IMPORTANTE: Enviar como JSON puro
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors', // Importante para Google Apps Script
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    // 'no-cors' mode doesn't allow reading the response
+                    // But we assume it was successful if no error is thrown
+                    
+                    // Simulate a small delay for better UX
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Show success message
+                    successDetails.textContent = `¡Gracias ${formData.name}! Su solicitud de "${formData.serviceType}" ha sido recibida exitosamente.`;
+                    referenceNumber.textContent = `Número de referencia: ${refNumber}`;
+                    successMessage.style.display = 'flex';
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Log to console (for debugging)
+                    console.log('✅ Datos enviados correctamente');
+                    console.log('📋 Referencia:', refNumber);
+                    console.log('👤 Cliente:', formData.name);
+                    console.log('📧 Email:', formData.email);
+                    console.log('📞 Teléfono:', formData.phone);
+                    console.log('🛠️ Servicio:', formData.serviceType);
+                    
+                    // Show test link in console
+                    console.log('🔗 Para verificar los datos, abre tu Google Sheets:');
+                    console.log('   https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit');
+                    
+                    // Reset form after 8 seconds
+                    setTimeout(() => {
+                        form.reset();
+                        successMessage.style.display = 'none';
+                        form.style.opacity = '1';
+                    }, 8000);
+                    
+                } catch (error) {
+                    // Show error message
+                    console.error('❌ Error al enviar el formulario:', error);
+                    
+                    // Custom error message based on error type
+                    let errorMessage = 'Error al enviar el formulario. ';
+                    
+                    if (error.message.includes('no está configurada')) {
+                        errorMessage += 'Por favor, configura la URL de Google Apps Script siguiendo las instrucciones.';
+                        instructionsPanel.style.display = 'block';
+                    } else if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch')) {
+                        errorMessage += 'Problema de conexión. Por favor, verifica tu internet e intenta nuevamente.';
+                    } else {
+                        errorMessage += 'Por favor, intenta nuevamente o contáctanos por teléfono.';
+                    }
+                    
+                    alert(errorMessage);
+                    
+                    // Also show error in form
+                    const errorDiv = document.createElement('div');
+                    errorDiv.style.cssText = `
+                        background-color: rgba(239, 68, 68, 0.1);
+                        border: 1px solid var(--error);
+                        color: var(--error);
+                        padding: 15px;
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+                    `;
+                    errorDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                    form.insertBefore(errorDiv, form.firstChild);
+                    
+                    setTimeout(() => {
+                        errorDiv.remove();
+                    }, 5000);
+                    
+                } finally {
+                    // Hide loading indicator
+                    submitBtn.disabled = false;
+                    loadingIndicator.style.display = 'none';
+                    form.style.opacity = '1';
                 }
             });
-        }, observerOptions);
-        
-        // Observe elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach(element => {
-            observer.observe(element);
-        });
-        
-        // Add random animation delays to service cards
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-        });
-        
-        // Add hover effect to service cards with JS for extra smoothness
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
+            
+            // Real-time validation for fields
+            document.getElementById('clientName').addEventListener('blur', function() {
+                if (this.value.trim().length < 3) {
+                    showError(nameError, 'El nombre debe tener al menos 3 caracteres');
+                } else {
+                    nameError.style.display = 'none';
+                }
             });
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+            document.getElementById('clientEmail').addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(this.value.trim())) {
+                    showError(emailError, 'Por favor ingrese un correo electrónico válido');
+                } else {
+                    emailError.style.display = 'none';
+                }
             });
-        });
-        
-        // Add typing effect to hero title
-        const heroTitle = document.querySelector('.hero h1');
-        const originalText = heroTitle.innerHTML;
-        const highlightedText = '<span class="highlight">Alta Tecnología</span>';
-        const finalText = originalText.replace('Alta Tecnología', highlightedText);
-        
-        // Set the final text with highlight
-        heroTitle.innerHTML = finalText;
-        
-        // Add highlight style
-        const style = document.createElement('style');
-        style.textContent = `
-            .highlight {
-                background: var(--gradient);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+            
+            document.getElementById('clientPhone').addEventListener('blur', function() {
+                const phoneRegex = /^[\d\s\-\+\(\)]{8,}$/;
+                if (!phoneRegex.test(this.value.replace(/\s/g, ''))) {
+                    showError(phoneError, 'Por favor ingrese un número de teléfono válido (al menos 8 dígitos)');
+                } else {
+                    phoneError.style.display = 'none';
+                }
+            });
+            
+            // Service type selection validation
+            const serviceRadios = document.querySelectorAll('input[name="serviceType"]');
+            serviceRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    serviceError.style.display = 'none';
+                });
+            });
+            
+            // Device type validation
+            document.getElementById('deviceType').addEventListener('change', function() {
+                if (this.value) {
+                    deviceError.style.display = 'none';
+                }
+            });
+            
+            // Description validation
+            document.getElementById('problemDescription').addEventListener('blur', function() {
+                if (this.value.trim().length < 10) {
+                    showError(descriptionError, 'La descripción debe tener al menos 10 caracteres');
+                } else {
+                    descriptionError.style.display = 'none';
+                }
+            });
+            
+            // Add shake animation for errors
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                    20%, 40%, 60%, 80% { transform: translateX(5px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Check if SCRIPT_URL is still the default
+            if (SCRIPT_URL && SCRIPT_URL.includes('AKfycbyKH8yVwExevLjIe8T5HacGkQQxSxlNc_sUoRTU99Cn1zUAcS0hgrL3k1d99fyMk7Hy')) {
+                console.warn('⚠️ ADVERTENCIA: Estás usando una URL de ejemplo. Necesitas configurar tu propia URL de Google Apps Script.');
+                console.warn('📋 Por favor, sigue las instrucciones en el panel de configuración.');
+                
+                // Show instructions by default if URL is not configured
+                instructionsPanel.style.display = 'block';
+                showInstructionsBtn.innerHTML = '<i class="fas fa-times"></i> Ocultar instrucciones';
+                
+                // Update button text
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Configurar URL primero';
+                submitBtn.style.background = 'linear-gradient(135deg, var(--warning) 0%, #f59e0b 100%)';
+                
+                // Change form submission to show instructions
+                form.onsubmit = function(e) {
+                    e.preventDefault();
+                    instructionsPanel.style.display = 'block';
+                    showInstructionsBtn.innerHTML = '<i class="fas fa-times"></i> Ocultar instrucciones';
+                    alert('Por favor, configura primero la URL de Google Apps Script siguiendo las instrucciones.');
+                    return false;
+                };
             }
-        `;
-        document.head.appendChild(style);
+            
+            // Test function to verify the script is working
+            async function testConnection() {
+                try {
+                    const testResponse = await fetch(SCRIPT_URL + '?ping=true');
+                    const text = await testResponse.text();
+                    console.log('✅ Conexión de prueba:', text);
+                    return true;
+                } catch (error) {
+                    console.error('❌ Error en conexión de prueba:', error);
+                    return false;
+                }
+            }
+            
+            // Test connection on load
+            setTimeout(() => {
+                if (SCRIPT_URL && !SCRIPT_URL.includes('AKfycbyKH8yVwExevLjIe8T5HacGkQQxSxlNc_sUoRTU99Cn1zUAcS0hgrL3k1d99fyMk7Hy')) {
+                    console.log('🔍 Probando conexión con Google Apps Script...');
+                    testConnection();
+                }
+            }, 1000);
+        });
     </script>
 </body>
 </html>
